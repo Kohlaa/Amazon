@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
+<<<<<<< HEAD
 import 'package:chat/modules/register/register_screen.dart';
+=======
+>>>>>>> origin/main
 import 'package:flutter/material.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
@@ -73,6 +76,7 @@ class ProductDetailsScreen extends StatelessWidget {
                 ),
               ),
             ),
+<<<<<<< HEAD
             SizedBox(height: 20),
             Center(
               child: ElevatedButton(
@@ -88,6 +92,8 @@ class ProductDetailsScreen extends StatelessWidget {
                 ),
               ),
             ),
+=======
+>>>>>>> origin/main
           ],
         ),
       ),
