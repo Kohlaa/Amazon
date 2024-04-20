@@ -1,3 +1,4 @@
+import 'package:chat/core/network/dio.dart';
 import 'package:chat/provider/user_provider.dart';
 import 'package:chat/ui/home/home_screen.dart';
 import 'package:chat/ui/login/login_screen.dart';
@@ -8,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+
+import 'modules/register/register_screen.dart';
 
 FirebaseMessaging messaging = FirebaseMessaging.instance;
 FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
@@ -57,6 +60,8 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 //     importance: Importance.high);
 
 void main() async {
+  await DioHelperPayment.init();
+  // WidgetsFlutterBinding.ensureInitialized();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   printToken();
@@ -144,6 +149,7 @@ class _MyAppState extends State<MyApp> {
         RegisterScreen.routeName: (context) => const RegisterScreen(),
         LoginScreen.routeName: (context) => const LoginScreen(),
         HomeScreen.routeName: (context) => const HomeScreen(),
+        PaymentRegisterScreen.routeName: (context) => PaymentRegisterScreen(),
       },
       // initialRoute: HomeScreen.routeName,
       // home: const HomeScreen(),
